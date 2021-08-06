@@ -1,8 +1,9 @@
 from django.shortcuts import render
+from .models import Post
 
 def index(request):
-    text = "Hello world"
+    articles = Post.objects.all()
     context = {
-        'context_text': text,
+        'articles': articles,
     }
     return render(request, 'blog/index.html', context)

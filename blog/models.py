@@ -8,6 +8,8 @@ class Category(models.Model):
 
     class Meta:
         ordering = ['title']
+        verbose_name = 'Категория'
+        verbose_name_plural = 'Категории'
 
     def __str__(self):
         return self.title
@@ -16,6 +18,8 @@ class Tag(models.Model):
 
     class Meta:
         ordering = ['title']
+        verbose_name = 'Тег'
+        verbose_name_plural = 'Теги'
 
     def __str__(self):
         return self.title
@@ -32,10 +36,12 @@ class Post(models.Model):
     status = models.BooleanField(default=True, verbose_name='Статус')
     views = models.IntegerField(default=0, verbose_name='Просмотры')
     category = models.ForeignKey(Category, on_delete=models.PROTECT, related_name='posts', verbose_name='Категория')
-    tags = models.ManyToManyField(Tag, blank=True,related_name='posts', verbose_name='Тег')
+    tags = models.ManyToManyField(Tag, blank=True, related_name='posts', verbose_name='Тег')
 
     class Meta:
         ordering = ('-publish',)
+        verbose_name = 'Статья'
+        verbose_name_plural = 'Статьи'
 
     def __str__(self):
         return self.title
