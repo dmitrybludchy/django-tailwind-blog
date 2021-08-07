@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 
 class Category(models.Model):
     title = models.CharField(max_length=50, verbose_name='Категория')
+    slug = models.SlugField(max_length=50, verbose_name='Url', unique=True, null=True)
 
     class Meta:
         ordering = ['title']
@@ -15,6 +16,7 @@ class Category(models.Model):
         return self.title
 class Tag(models.Model):
     title = models.CharField(max_length=50, verbose_name='Тег')
+    slug = models.SlugField(max_length=50, verbose_name='Url', unique=True, null=True)
 
     class Meta:
         ordering = ['title']

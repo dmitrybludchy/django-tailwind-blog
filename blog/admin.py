@@ -1,11 +1,13 @@
 from blog.models import Category, Post, Tag
 from django.contrib import admin
-
+from django import forms
+from ckeditor_uploader.widgets import CKEditorUploadingWidget
 
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('id', 'title')
     list_display_links = ('id', 'title')
     search_fields = ('title',)
+    prepopulated_fields = {'slug': ('title',)}
 
 
 admin.site.register(Category, CategoryAdmin)
@@ -15,9 +17,17 @@ class TagAdmin(admin.ModelAdmin):
     list_display = ('id', 'title')
     list_display_links = ('id', 'title')
     search_fields = ('title',)
+    prepopulated_fields = {'slug': ('title',)}
 
     
 admin.site.register(Tag, TagAdmin)
+
+
+class PostAdminForm(forms.ModelForm):
+    body = forms.CharField(widget=CKEditorUploadingWidget())
+    class Meta:
+        model = Post
+        fields = '__all__'
 
 
 class PostAdmin(admin.ModelAdmin):
@@ -29,6 +39,8 @@ class PostAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
     date_hierarchy = 'publish'
     raw_id_fields = ('author',)
+    form = PostAdminForm
+
 
 admin.site.register(Post, PostAdmin)
 
