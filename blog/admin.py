@@ -40,6 +40,10 @@ class PostAdmin(admin.ModelAdmin):
     date_hierarchy = 'publish'
     raw_id_fields = ('author',)
     form = PostAdminForm
+    save_as = True
+    save_on_top = True
+    readonly_fields = ('views', 'created', 'updated', 'publish')
+    fields = ('author', 'title', 'slug', 'category', 'tags', 'photo', 'body', 'publish', 'created', 'updated', 'status', 'views', )
 
 
 admin.site.register(Post, PostAdmin)
