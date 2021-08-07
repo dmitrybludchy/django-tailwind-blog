@@ -1,5 +1,4 @@
 {% load static %}
-{% load cache %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,16 +12,14 @@
 <body>
 
 <!-- Header -->
-{% cache 20 header %}
-    {% include 'inc/_header.html' %}
-{% endcache %}
+	{% include 'inc/_header.html' %}
+
 <!-- Card -->
 {% block content %}{% endblock %}
 
 <!-- Footer -->
-{% cache 20 footer %}
-    {% include 'inc/_footer.html' %}
-{% endcache %}
+{% include 'inc/_footer.html' %}
+
 <script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>

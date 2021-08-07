@@ -7,3 +7,7 @@ def index(request):
         'articles': articles,
     }
     return render(request, 'blog/index.html', context)
+
+
+def get_category(request, slug):
+    return render(request, 'blog/category.html')

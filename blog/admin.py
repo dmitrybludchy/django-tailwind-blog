@@ -44,6 +44,7 @@ class PostAdmin(admin.ModelAdmin):
     save_on_top = True
     readonly_fields = ('views', 'created', 'updated', 'publish')
     fields = ('author', 'title', 'slug', 'category', 'tags', 'photo', 'body', 'publish', 'created', 'updated', 'status', 'views', )
+    list_editable = ('status',)
 
 
 admin.site.register(Post, PostAdmin)
