@@ -19,5 +19,9 @@ window.addEventListener('DOMContentLoaded', () => {
     const btnComponentsOn = document.querySelector('#componentsOn');
   
     showHide(btnComponents, btnComponentsOn);
-  
+    
+    const componentsMobile = document.querySelector('#componentsMobile');
+    const componentsOnMobile = document.querySelector('#componentsOnMobile');
+
+    showHide(componentsMobile, componentsOnMobile);
 });

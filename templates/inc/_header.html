@@ -1,3 +1,4 @@
+{% load menu %}
 <header class="bg-white border-b lg:fixed lg:w-full lg:top-0 lg:left-0 lg:z-40">
 	<div
 		class="container px-4 py-5 mx-auto space-y-4 lg:space-y-0 lg:flex lg:items-center lg:justify-between lg:space-x-10">
@@ -34,7 +35,7 @@
 				<a href="#" class="text-gray-500 hover:text-gray-800">Home</a>
 				<div class="relative inline-block lg:block">
 					<div>
-						<button"
+						<button id="componentsMobile"
 							class="text-gray-500 hover:text-gray-800 flex items-center space-x-1 focus:outline-none">
 							<span>How-to Tutorials</span>
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
@@ -47,13 +48,10 @@
 							</button>
 					</div>
 					<!---->
-					<div class="absolute left-0 z-20 py-1 mt-2 bg-white border border-gray-100 rounded-md shadow-xl lg:left-auto lg:right-0"
+					<div id="componentsOnMobile" class="absolute left-0 z-20 py-1 mt-2 bg-white border border-gray-100 rounded-md shadow-xl lg:left-auto lg:right-0"
 						style="display: none;">
 						<div class="w-36">
-							<a href="#"
-								class="block px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-200 transform hover:text-primary">
-								All Components
-							</a>
+								{% menu_tutorials 'block px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-200 transform hover:text-primary' %}
 						</div>
 					</div>
 				</div>
@@ -94,10 +92,7 @@
 						class="absolute left-0 z-20 py-1 mt-2 bg-white border border-gray-100 rounded-md shadow-xl lg:left-auto lg:right-0"
 						style="display: none;">
 						<div class="w-36">
-							<a href="#"
-								class="block px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-200 transform hover:text-primary">
-								All Components
-							</a>
+								{% menu_tutorials "block px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-200 transform hover:text-primary" %}
 						</div>
 					</div>
 				</div>
