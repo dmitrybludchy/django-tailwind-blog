@@ -1,52 +1,30 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block content %}
-
-
-<main class="container mx-auto my-5 w-4/5 xl:w-4/6"> 
-    {% for article in articles %}
-    <div class="relative rounded-lg flex my-4 flex-col lg:flex-row items-center lg:shadow-xl lg:min-h-full xl:h-96 2xl:h-96 mx-2">
-        
-          <div class="z-0 order-1 lg:order-2 relative w-full lg:w-2/5 h-80 lg:h-full overflow-hidden rounded-lg lg:rounded-none lg:rounded-r-lg">
-              <div class="absolute inset-0 w-full h-full object-fill object-center bg-blue-400 bg-opacity-30 bg-cover bg-bottom" style="background-image: url({{ article.photo.url }}); background-blend-mode: multiply;"></div>
-              <div class="lg:hidden absolute inset-0 h-full p-6 pb-6 flex flex-col-reverse justify-start items-start bg-gradient-to-b from-transparent via-transparent to-gray-900">
-                  <h3 class="w-full font-bold text-2xl text-white leading-tight mb-2">{{ article.title }}</h3>
-                  <h4 class="w-full text-xl text-gray-100 leading-tight">{{ article.category }}</h4>   
-              </div>
-              <svg class="hidden lg:block absolute inset-y-0 h-full w-24 fill-current text-white -ml-12" viewBox="0 0 100 100" preserveAspectRatio="none">
-                  <polygon points="50,0 100,0 50,100 0,100" />
-              </svg>
-          </div>
-  
-          <div class="z-10 order-2 lg:order-1 w-full h-full lg:w-3/5 flex items-center -mt-6 lg:mt-0">
-              <div class="p-8 lg:pr-18 lg:pl-14 lg:py-12 mx-2 lg:mx-0 h-full bg-white rounded-lg lg:rounded-none lg:rounded-l-lg shadow-xl lg:shadow-none">
-                  <h4 class="hidden lg:block text-xl text-gray-400">{{ article.category }}</h4>
-                  <h3 class="hidden lg:block font-bold text-2xl text-gray-700">{{ article.title }}</h3>
-                  <p class="text-gray-600 text-justify">
-                    {% autoescape off %}
-                        {{ article.body|truncatechars:375 }}    
-                    {% endautoescape %}
+{% block content %}    
+<main class="flex-1 lg:mt-20 lg:mb-20">
+    <div class="container px-4 py-2 mx-auto">
+        <div class="grid gap-20 mt-14 md:grid-cols-2 lg:grid-cols-3">
+            <!-- Card 1 -->
+            {% for article in articles %}
+            <div class="border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+                <img class="lg:h-44 md:h-48 w-full object-cover object-center" src="{{ article.photo.url }}" alt="image">
+                <div class="p-6 hover:bg-indigo-700 hover:text-white transition duration-300 ease-in">
+                    <h2 class="text-base font-medium text-indigo-300 mb-1">{{ article.publish|date:"j F Y" }}</h2>
+                    <h1 class="text-2xl font-semibold mb-3">{{ article.title }}</h1>
+                    <p class="leading-relaxed mb-3">
+                        {% autoescape off %}
+                            {{ article.body|truncatechars:300 }}
+                        {% endautoescape %}
                     </p>
-                  <a class="flex items-baseline mt-3 text-blue-600 hover:text-blue-900 focus:text-blue-900" href="">
-                      <span>Читать</span>
-                      <span class="text-xs ml-1">&#x279c;</span>    
-                  </a>
-
-                  
-                  <div class='my-3 flex flex-wrap -m-1'>
-                    <span class="m-1 bg-gray-200 hover:bg-gray-300 rounded-full px-2 font-bold text-sm leading-loose cursor-pointer" >#{{ article.tags }}</span>
-                    
+                    <div class="flex items-center flex-wrap">
+                        <a href="">Blbalbla</a>
+                        <a href="">blblbla</a>
+                    </div>
                 </div>
-                <p class="text-sm text-gray-700 uppercase tracking-wide font-semibold mt-2">
-                    {{ article.author }} &bull; {{ article.publish|date:"Y-m-d H:i" }}
-                  </p>
-              </div>
-          </div>
-  
+            </div>
+            {% endfor %}
+        </div>
     </div>
-    {% endfor %}
 </main>
-
-
 {% endblock %}
