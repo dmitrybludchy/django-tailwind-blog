@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/style.min.css' %}">
-    <title>Blog</title>
+    <title>{% block title %}pythonDjango{% endblock %}</title>
 </head>
 
 <body>
@@ -19,13 +19,14 @@
             {% include 'inc/_header.html' %}
         {% endcache %}
 
-        <!-- Card -->
+        <!-- Post -->
         {% block content %}{% endblock %}
 
+        <!-- Pagination -->
+        {% include 'inc/_pagination.html' %}
+
         <!-- Footer -->
-        {% cache 20 footer %}
             {% include 'inc/_footer.html' %}
-        {% endcache %}
         
     </div>
 

@@ -1,21 +1,23 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block title %}blog{% endblock %}
+
 {% block content %}    
 <main class="flex-1 lg:mt-20 lg:mb-20">
     <div class="container px-4 py-2 mx-auto">
         <div class="grid gap-20 mt-14 md:grid-cols-2 lg:grid-cols-3">
             <!-- Card 1 -->
-            {% for article in articles %}
+            {% for post in posts %}
             <div class="border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
-                <img class="lg:h-44 md:h-48 w-full object-cover object-center" src="{{ article.photo.url }}" alt="image">
-                <div class="p-6 hover:bg-indigo-700 hover:text-white transition duration-300 ease-in">
-                    <h2 class="text-base font-medium text-indigo-300 mb-1">{{ article.publish|date:"j F Y" }}</h2>
-                    <h1 class="text-2xl font-semibold mb-3">{{ article.title }}</h1>
+                <img class="lg:h-44 md:h-48 w-full object-cover object-center" src="{{ post.photo.url }}" alt="image">
+                <div class="p-6 h-full hover:bg-indigo-700 hover:text-white transition duration-300 ease-in">
+                    <h2 class="text-base font-medium text-indigo-300 mb-1">{{ post.publish|date:"j F Y" }}</h2>
+                    <h1 class="text-2xl font-semibold mb-3">{{ post.title }}</h1>
                     <p class="leading-relaxed mb-3">
-                        {% autoescape off %}
-                            {{ article.body|truncatechars:300 }}
-                        {% endautoescape %}
+                   
+                            {{ post.body|truncatewords_html:30|safe }}
+                  
                     </p>
                     <div class="flex items-center flex-wrap">
                         <a href="">Blbalbla</a>

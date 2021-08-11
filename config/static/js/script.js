@@ -2,12 +2,12 @@ window.addEventListener('DOMContentLoaded', () => {
     const burger = document.querySelector('#burger');
     const menu = document.querySelector('#menu');
   
-    const showHide = function(el, sh) {
+    const showHide = function(el, show) {
       el.addEventListener('click', () => {
-        if (sh.style.display === "none") {
-          sh.style.display = "";
+        if (show.style.display === "none") {
+          show.style.display = "";
         } else {
-          sh.style.display = "none";
+          show.style.display = "none";
         }
       })
     };
