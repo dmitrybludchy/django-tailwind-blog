@@ -13,11 +13,13 @@ class Category(models.Model):
         verbose_name = 'Категория'
         verbose_name_plural = 'Категории'
 
+    def __str__(self):
+        return self.title
+
     def get_absolute_url(self):
         return reverse('category', kwargs={'slug': self.slug})
 
-    def __str__(self):
-        return self.title
+    
 class Tag(models.Model):
     title = models.CharField(max_length=50, verbose_name='Тег')
     slug = models.SlugField(max_length=50, verbose_name='Url', unique=True, null=True)
