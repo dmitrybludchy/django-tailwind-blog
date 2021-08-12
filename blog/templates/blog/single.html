@@ -1,17 +1,19 @@
 {% extends 'base.html' %} 
 {% load static %} 
 
+{% block title %}{{ post.title }}{% endblock %}
+
 {% block content %}
 <div class="flex-1 lg:mt-20">
     <div class="container px-6 py-8 mx-auto">
         <div class="max-w-4xl px-4 mx-auto mt-4">
-
-            <div class="relative mx-auto w-full h-96 border rounded-lg">
-                <img class="h-full w-full rounded-t-lg shadow-2xl" src="{{ post.photo.url }}" alt="photo">
+            
+            <div class="relative mx-auto w-full h-128 border rounded-lg">
+                <img class="w-full h-full rounded-t-lg shadow-2xl" src="{{ post.photo.url }}" alt="photo">
                 <div class="flex flex-wrap justify-between content-center absolute inset-x-0 bottom-0 w-full h-16 bg-gray-300 opacity-70 px-10">
                     <div class="flex flex-row justify-center items-center">
                         <div class="flex flex-row justify-center items-center space-x-2 text-gray-700 bg-white w-28 rounded-lg py-1 px-3">
-                            <span class="text-sm">112223</span>
+                            <span class="text-sm">{{ post.views }}</span>
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
@@ -19,7 +21,7 @@
                         </div>
                         <span class="mx-4 text-black text-sm">{{ post.publish|date:"j F Y в G:i"}}</span>
                     </div>                                              
-                    <div class="text-base text-black">Author:{{ post.author }} </div>
+                    <div class="text-base text-black">author: {{ post.author }} </div>
                 </div>
             </div>
 
@@ -33,19 +35,25 @@
         </div>
 
         <!-- Tag -->
+
+       
         <div class="flex flex-row justify-center mt-6 px-6 pt-4 pb-2">
-            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
-            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
-            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
+          {% if post.tags.exists %}
+            {% for tag in post.tags.all %} 
+            <a href="{{ tag.get_absolute_url }}">
+              <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 hover:text-black mr-2 mb-2 transform hover:scale-110 transition">#{{ tag.title }}</span>
+            </a>
+            {% endfor %}
+          {% endif %}
           </div>
 
         
         <div class="p-10 grid grid-col-1 lg:grid-cols-3 xl:grid-cols-3 gap-20">
             <!--Card 1-->
             <div class="rounded overflow-hidden shadow-lg transform hover:scale-105 transition duration-500">
-              <img class="w-full h-1/2" src="{{ post.photo.url }}" alt="Mountain">
+              <img class="w-full h-1/2" src="{{ post.photo.url }}" alt="River">
               <div class="px-6 py-4">
-                <div class="font-bold text-xl mb-2">Mountain</div>
+                <div class="font-bold text-xl mb-2">River</div>
                 <p class="text-gray-700 text-base">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
                 </p>
@@ -53,7 +61,7 @@
               <div class="px-6 pt-4 pb-2">
                 <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
                 <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
-                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
+                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#summer</span>
               </div>
             </div>
             <!--Card 2-->
