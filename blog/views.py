@@ -3,6 +3,7 @@ from django.shortcuts import render
 from .models import Post, Category, Tag
 from django.views.generic import ListView, DetailView
 from django.db.models import F
+from django.contrib.auth.forms import UserCreationForm
 
 
 class Home(ListView):
@@ -59,3 +60,10 @@ class PostsByTag(ListView):
         context['title'] = 'Tutorials by tags: ' + str(Tag.objects.get(slug=self.kwargs['slug'])) 
         return context
 
+
+def register(request):
+    form = UserCreationForm()
+    return render(request, 'blog/register.html', {'form': form})
+
+def login(request):
+    return render(request, 'blog/login.html')

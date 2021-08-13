@@ -17,10 +17,12 @@
         <!-- Header -->
         {% cache 20 header %}
             {% include 'inc/_header.html' %}
-        {% endcache %}
+        {% endcache %} 
 
-        <!-- Post -->
-        {% block content %}{% endblock %}
+        <!-- Main -->
+        <main class="flex-1 mb:2 lg:mt-20 lg:mb-4">
+            {% block content %}{% endblock %}
+        </main>
 
         <!-- Pagination -->
         {% include 'inc/_pagination.html' %}
