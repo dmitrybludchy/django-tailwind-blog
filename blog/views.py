@@ -60,10 +60,3 @@ class PostsByTag(ListView):
         context['title'] = 'Tutorials by tags: ' + str(Tag.objects.get(slug=self.kwargs['slug'])) 
         return context
 
-
-def register(request):
-    form = UserCreationForm()
-    return render(request, 'blog/register.html', {'form': form})
-
-def login(request):
-    return render(request, 'blog/login.html')

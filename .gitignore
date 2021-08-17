@@ -117,3 +117,6 @@ GitHub.sublime-settings
 
 #Jstools
 jstools/node_modules
+
+#Django_cashe
+django_cache
