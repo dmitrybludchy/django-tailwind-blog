@@ -17,13 +17,10 @@
         <!-- Header -->
         {% cache 20 header %}
             {% include 'inc/_header.html' %}
-        {% endcache %}
+        {% endcache %} 
 
-        <!-- Post -->
-        {% block content %}{% endblock %}
-
-        <!-- Pagination -->
-        {% include 'inc/_pagination.html' %}
+        <!-- Main -->
+            {% block content %}{% endblock %}
 
         <!-- Footer -->
             {% include 'inc/_footer.html' %}

@@ -1,4 +1,5 @@
 window.addEventListener('DOMContentLoaded', () => {
+    // Show menu by mobile
     const burger = document.querySelector('#burger');
     const menu = document.querySelector('#menu');
   
@@ -11,10 +12,11 @@ window.addEventListener('DOMContentLoaded', () => {
         }
       })
     };
-  
+    
     showHide(burger, menu);
   
 
+    // Dropdown
     const btnComponents = document.querySelector('#components');
     const btnComponentsOn = document.querySelector('#componentsOn');
   

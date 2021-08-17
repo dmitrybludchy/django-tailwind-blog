@@ -3,6 +3,7 @@ from django.shortcuts import render
 from .models import Post, Category, Tag
 from django.views.generic import ListView, DetailView
 from django.db.models import F
+from django.contrib.auth.forms import UserCreationForm
 
 
 class Home(ListView):
