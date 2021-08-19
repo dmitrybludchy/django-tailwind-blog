@@ -119,4 +119,4 @@ GitHub.sublime-settings
 jstools/node_modules
 
 #Django_cashe
-django_cache
+django_cache/
