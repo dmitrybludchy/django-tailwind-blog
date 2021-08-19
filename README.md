@@ -2,7 +2,7 @@
 
 ### *This is a sample project to explore Django and TailwindCSS with using django-allauth.*
 
-____________
+
 #### Getting Started with Django
 ____________
 ### 1. Set up your Django project
