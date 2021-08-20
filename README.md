@@ -2,7 +2,7 @@
 
 ### This is a sample project to explore Django and TailwindCSS with using django-allauth.
 
-![](./readme_images/tailwindproject.png)
+![](./readme/tailwindproject.png)
 ____________
 #### *Getting Started with Django*
 
@@ -48,7 +48,7 @@ Link style.min.css to your templates and enjoy.
 
 #### When you are developing and using all the capabilities of Tailwind remember to avoid the purge.
 
-![](./readme_images/1.png)
+![](./readme/1.png)
 
 
 
