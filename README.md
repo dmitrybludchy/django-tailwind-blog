@@ -2,16 +2,12 @@
 
 ### This is a sample project to explore Django and TailwindCSS with using django-allauth.
 
-<<<<<<< HEAD
 ![](./readme_images/tailwindproject.png)
 ____________
 #### *Getting Started with Django*
 
-=======
 
-#### Getting Started with Django
-____________
->>>>>>> d01c69004a4c8613e28cb2a8d69f0b5ab978747e
+
 ### 1. Set up your Django project
 
 If you are ___cloning this repo___ :
