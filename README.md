@@ -24,6 +24,14 @@ Install all dependencies:
 
     pip3 install -r requirements.txt
 
+Now, make the migrations using this command:
+    
+    python manage.py migrate
+
+Then, create a superuser by running the following command in a terminal.
+
+    python manage.py createsuperuser
+
 ### 2. Set up your TailwindCSS project
 
 Navigate into folder jstools
