@@ -10,25 +10,25 @@ ____________
 
 ### 1. Set up your Django project
 
-If you are ___cloning this repo___ :
+If you are __cloning this repo__ then go to your project folder :
 
 create a virtual environment (using Python's venv)
 
     python3 -m venv venv 
 
-To activate virtual environment (Linux):
+to activate virtual environment (Linux):
 
     source venv/bin/activate
 
-Install all dependencies:
+install all dependencies:
 
     pip3 install -r requirements.txt
 
-Now, make the migrations using this command:
+now, make the migrations using this command:
     
     python manage.py migrate
 
-Then, create a superuser by running the following command in a terminal.
+then, create a superuser by running the following command in a terminal.
 
     python manage.py createsuperuser
 
