@@ -2,7 +2,17 @@
 
 ### This is a sample project to explore Django and TailwindCSS with using django-allauth.
 
-![](./readme/tailwindproject.png)
+![](./readme/main.png)
+
+___
+
+![](./readme/signin.png)
+
+___
+
+![](./readme/signin_github.png)
+
+
 ____________
 #### *Getting Started with Django*
 
@@ -48,6 +58,8 @@ If you need to compile the tailwindcss file
 
 This command will generate two files: styles.css and styles.min.css in __config/static/css__ folder
 
+![](./readme/package_json.png)
+
 then, collect static files in STATIC_ROOT (static): 
 
     python3 manage.py collectstatic
@@ -56,7 +68,7 @@ Link style.min.css to your templates and enjoy.
 
 #### When you are developing and using all the capabilities of Tailwind remember to avoid the purge.
 
-![](./readme/1.png)
+![](./readme/tailwindconfig.png)
 
 
 
