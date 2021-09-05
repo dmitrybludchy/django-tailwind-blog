@@ -15,9 +15,7 @@
     <div class="flex flex-col min-h-screen font-roboto">
 
         <!-- Header -->
-        {% cache 20 header %}
             {% include 'inc/_header.html' %}
-        {% endcache %} 
 
         <!-- Main -->
             {% block content %}{% endblock %}
