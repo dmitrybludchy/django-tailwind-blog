@@ -40,15 +40,15 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
 
+    # 3rd party
     'debug_toolbar',
     'ckeditor',
-
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-
     'allauth.socialaccount.providers.github',
-
+    
+    # Local
     'blog.apps.BlogConfig',
 ]
 
